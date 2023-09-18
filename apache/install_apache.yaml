@@ -1,6 +1,6 @@
 ---
 - name: Install apache httpd
-  hosts: ce_ansible_host
+  hosts: all
   gather_facts: true
   become: true
   vars: 
