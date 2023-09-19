@@ -1,0 +1,9 @@
+---
+- name: List files in ce_host
+  vars: 
+    port: 8080
+
+  tasks: 
+    - name: copy a file
+      file: 
+        path: /tmp/awx-test-01.txt
