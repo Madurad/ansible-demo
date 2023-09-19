@@ -5,5 +5,6 @@
 
   tasks: 
     - name: copy a file
+      become: true
       file: 
         path: /tmp/awx-test-01.txt
