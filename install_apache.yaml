@@ -12,6 +12,12 @@
       apt:
         upgrade: yes
 
+    - name: Install psql
+      become: true
+      apt:
+        name: postgresql-client-common
+        state: present
+
     - name: Print all gather_facts
       debug:
         msg: "{{ ansible_facts }}"
