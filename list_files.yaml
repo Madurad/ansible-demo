@@ -1,0 +1,37 @@
+---
+- name: List files in localhost
+  hosts: all
+  vars:
+    # host_name: "madz101"
+    packages:
+      - nmap
+      - httpd
+      - mod_php
+  # become: yes
+  gather_facts: true
+  tasks: 
+    - name: list the files
+      ansible.builtin.find:
+        paths: /tmp 
+
+    - name: sample commands
+      command: ls -al
+
+    - name: "create new directory in {{ host_name }} {{ packages[2] }}"
+      ansible.builtin.tempfile:
+        path: /tmp
+        prefix: "my_file"
+        suffix: "madz101"
+        state: file
+      register: tempfile
+
+    - name: remove temp file
+      ansible.builtin.file:
+        path: "{{ tempfile.path }}"
+        state: "absent"
+      when: tempfile.path is not defined
+
+    - name: print var values
+      debug:
+        msg: "{{ host_name }} print values {{ packages[0] }} port: {{ host_port }}"
+      no_log: false
