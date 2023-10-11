@@ -3,6 +3,7 @@
   hosts: all
   vars:
     host_name: "madz101"
+    host_port: 8778
     packages:
       - nmap
       - httpd
