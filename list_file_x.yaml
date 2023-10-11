@@ -2,8 +2,8 @@
 - name: List files in localhost
   hosts: all
   vars:
-    host_name: "madz101"
-    host_port: 8778
+    host_name: "madz222"
+    host_port: 8228
     packages:
       - nmap
       - httpd
@@ -25,8 +25,8 @@
     - name: "create new directory in {{ host_name }} {{ packages[2] }}"
       ansible.builtin.tempfile:
         path: /tmp
-        prefix: "my_file"
-        suffix: "madz101"
+        prefix: "april"
+        suffix: "ma2221"
         state: file
       register: tempfile
 
