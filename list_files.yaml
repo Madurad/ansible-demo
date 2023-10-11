@@ -2,7 +2,7 @@
 - name: List files in localhost
   hosts: all
   vars:
-    # host_name: "madz101"
+    host_name: "madz101"
     packages:
       - nmap
       - httpd
