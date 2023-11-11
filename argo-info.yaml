@@ -1,6 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: my-component
+  name: backstage-argocd
+  description: |
+    Backstage is an open-source developer portal that puts the developer experience first.
   annotations:
     argocd/app-name: guestbook
+spec:
+  type: library
+  owner: CNCF
+  lifecycle: experimental
